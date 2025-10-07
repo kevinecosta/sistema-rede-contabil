@@ -1732,7 +1732,10 @@ const onSubmitNewProposal = async (values: PropostaFormData) => {
               <div className="grid grid-cols-3 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="comissao">Comissão</Label>
-                  <Select onValueChange={(value: "" | "paga" | "enviada_dp" | "pendente" | "dispensada") => form.setValue("comissao", value)}>
+                  <Select
+                    value={form.watch("comissao")}
+                    onValueChange={(value: "" | "paga" | "enviada_dp" | "pendente" | "dispensada") => form.setValue("comissao", value)}
+                  >
                     <SelectTrigger>
                       <SelectValue placeholder="Selecione" />
                     </SelectTrigger>
@@ -1841,7 +1844,10 @@ const onSubmitNewProposal = async (values: PropostaFormData) => {
                 </div>
                 <div className="grid gap-2">
                   <Label htmlFor="tipo_cliente">Tipo de Serviço</Label>
-                  <Select onValueChange={(value) => form.setValue("tipo_cliente", value)}>
+                  <Select
+                    value={form.watch("tipo_cliente")}
+                    onValueChange={(value) => form.setValue("tipo_cliente", value)}
+                  >
                     <SelectTrigger>
                       <SelectValue placeholder="Selecione" />
                     </SelectTrigger>
@@ -1968,7 +1974,10 @@ const onSubmitNewProposal = async (values: PropostaFormData) => {
             <div className="grid grid-cols-3 gap-4">
               <div className="grid gap-2">
                 <Label htmlFor="evento">Evento</Label>
-                <Select onValueChange={(value) => exitForm.setValue("evento", value)}>
+                <Select
+                  value={exitForm.watch("evento")}
+                  onValueChange={(value) => exitForm.setValue("evento", value)}
+                >
                   <SelectTrigger>
                     <SelectValue placeholder="Selecione" />
                   </SelectTrigger>
@@ -2002,7 +2011,10 @@ const onSubmitNewProposal = async (values: PropostaFormData) => {
 
             <div className="grid gap-2">
               <Label htmlFor="motivo">Motivo</Label>
-              <Select onValueChange={(value) => exitForm.setValue("motivo", value)}>
+              <Select
+                value={exitForm.watch("motivo")}
+                onValueChange={(value) => exitForm.setValue("motivo", value)}
+              >
                 <SelectTrigger>
                   <SelectValue placeholder="Selecione" />
                 </SelectTrigger>
